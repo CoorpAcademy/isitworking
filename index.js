@@ -192,6 +192,15 @@ function launchFork(options, progress, next) {
     return webdriverioProcess;
     }
 
+function globalize(patterns) {
+    if (!patterns instanceof Array) {
+        patterns = [patterns];
+    }
+    return _.flatten(_.map(patterns, function(pattern) {
+        return glob.sync(pattern);
+    }));
+}
+
 function runner(options, done) {
     options = _.extend({
         reporter: 'spec',
@@ -218,9 +227,9 @@ function runner(options, done) {
     // used to know position in muti browser test
     let capabilitiesIndex = 0;
 
-    const testFiles = glob.sync(options.tests);
+    const testFiles = globalize(options.tests);
     debug('testFiles', testFiles);
-    const commandHelpersFiles = glob.sync(options.commandHelpers);
+    const commandHelpersFiles = globalize(options.commandHelpers);
     debug('commandHelpersFiles', commandHelpersFiles);
 
     // const capabilitiesDone = 0;
