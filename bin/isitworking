@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+'use strict';
+
+const runner = require('../index');
+const _ = require('lodash');
+const options = _.defaults({
+  logger: console
+}, JSON.parse(process.argv[2] || '{}'));
+
+runner(options, function(err) {
+    if (err) {
+      console.error(err.stack || err);
+      process.exit(1);
+    }
+    process.exit(0);
+});

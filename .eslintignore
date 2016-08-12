@@ -1,0 +1,7 @@
+node_modules/
+test/coverage
+client/public/bower_components
+client/public/scripts/ladda.min.js
+client/public/scripts/modernizr-custom-test.js
+server/build
+client/build

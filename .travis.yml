@@ -1,0 +1,14 @@
+language: node_js
+sudo: false
+node_js:
+- '6'
+deploy:
+  provider: npm
+  email: system@coorpacademy.com
+  api_key:
+    secure: GW3DQ0iJhQ8c+R/BNEpQu7jDyeZG/bfRxgurD+dvOKOKdI5kUJDgBxNIbptr/NDCbYALR7bvP4i2EHgWjZYc3HP0zNEqA+ahYvHvDmBfyhRQz+0mdW/ZlXxM8pDZxSPe1wC2ZzbxqOLqaOsXML2Z1QzPENxWbjFN2kf9wDZllZ/V/CYvubcfT/zMrufT2Nz1Fjdyd62C508N6ShAjRqMoYEh0JQ2dIQu4FbMQJFtx0+Z869ONanKaeDueGig5XDCUbzDEXdxezxCQkx3Uyq4uJzHEV9AU5UHqk3JC3Hmz1zRrsRqm7kFVtZ00UxuR0ENa3Nmt5jpJgYlV54cZiJjaDPZlC1DhfuBsB+LZ/3bgAv79grKymD6EciUKJQ9B6Di2K6Wd4oRgybqbkyTRHWYbOkKCWoxyIUTAsptvLNjxpGMQGKIeb2/yRyJ1Q17s9HMIVeMYsYKrnPw5ZytZSMCwDSYF4OUeGIOmyWIeb6CP0h+oeGGfxpWeGitB8zjQ4IpPNSi5J8xYOI3zL8YMDsYJjK5HZ5FPnhGrYmNILRDiuouYhRUAtSTYW3wMNgI8VoRTKQTmfLzClScWgA+RG4NwrK2f8cdeTzXKgBvCByGwCu8OCr8aA/4kSqlV0RkXNYitbp0cwzmQdG/K1EksQGdL/MDkJjaRwbAYQ6J/QkSwHA=
+  on:
+    tags: true
+    repo: CoorpAcademy/isitworking
+  on:
+    branch: master
