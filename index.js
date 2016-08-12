@@ -193,7 +193,7 @@ function launchFork(options, progress, next) {
     }
 
 function globalize(patterns) {
-    if (!patterns instanceof Array) {
+    if (patterns instanceof Array === false) {
         patterns = [patterns];
     }
     return _.flatten(_.map(patterns, function(pattern) {
