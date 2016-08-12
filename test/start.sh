@@ -4,4 +4,4 @@
 #sleep 2
 #./bin/isitworking "{\"logLevel\":\"verbose\",\"waitforTimeout\":15000,\"desiredCapabilities\":[{\"browserName\":\"chrome\"}]}"
 
-./bin/isitworking "{\"user\":\"$SAUCE_USERNAME\",\"key\":\"$SAUCE_ACCESS_KEY\",\"updateSauceJob\":true,\"logLevel\":\"verbose\",\"waitforTimeout\":15000,\"desiredCapabilities\":[{\"browserName\":\"chrome\"}]}"
+./bin/isitworking "{\"user\":\"$SAUCE_USERNAME\",\"key\":\"$SAUCE_ACCESS_KEY\",\"updateSauceJob\":true,\"logLevel\":\"silent\",\"waitforTimeout\":15000,\"desiredCapabilities\":[{\"browserName\":\"chrome\"}]}"

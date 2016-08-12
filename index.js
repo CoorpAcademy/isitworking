@@ -85,7 +85,7 @@ function sauce2browserstack(capability) {
 }
 
 function launchFork(options, progress, next) {
-    options.logger.debug('starting webdriver with options', options);
+    debug('starting webdriver with options', options);
     let failedScreenShotUrl;
     let tunnelLogsUrl;
     const desiredCapability = options.desiredCapabilities;
@@ -213,7 +213,7 @@ function runner(options, done) {
     }, options);
     const logger = options.logger;
     logger.debug = logger.debug || logger.log || logger.info;
-    logger.debug(options);
+    debug(options);
 
     // used to know position in muti browser test
     let capabilitiesIndex = 0;
