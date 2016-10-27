@@ -1,6 +1,6 @@
 {
   "name": "isitworking",
-  "version": "1.0.3",
+  "version": "1.2.0",
   "description": "Webdriver.io runner with saucelabs support",
   "main": "index.js",
   "scripts": {

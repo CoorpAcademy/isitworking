@@ -78,8 +78,10 @@ function sauce2browserstack(capability) {
         }
     }
 
-    capability.browser_version = capability.version.indexOf('.') >= 0 ?
-    capability.version : capability.version + '.0';
+    if (capability.version) {
+        capability.browser_version = capability.version.indexOf('.') >= 0 ?
+        capability.version : capability.version + '.0';
+    }
     capability.browser = upperCaseFirst(capability.browserName);
     return capability;
 }
