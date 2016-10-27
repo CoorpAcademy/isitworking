@@ -7,7 +7,7 @@ describe('[Access]', function() {
         return browser.url('https://www.coorpacademy.com')
         .getTitle()
         .then(function(title) {
-            assert.equal(title, 'Formation en ligne sur le digital pour entreprises et particuliers');
+            assert.equal(title, 'Coorpacademy');
         });
     });
 });
