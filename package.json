@@ -36,7 +36,7 @@
     "lodash": "4.14.2",
     "mocha": "3.0.2",
     "request": "2.74.0",
-    "webdriverio": "4.2.5"
+    "webdriverio": "4.3.0"
   },
   "optionalDependencies": {
     "bugsnag": "^1.7.0",
