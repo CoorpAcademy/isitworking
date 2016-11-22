@@ -924,9 +924,9 @@
       }
     },
     "webdriverio": {
-      "version": "4.3.0",
-      "from": "webdriverio@4.3.0",
-      "resolved": "https://registry.npmjs.org/webdriverio/-/webdriverio-4.3.0.tgz",
+      "version": "4.4.0",
+      "from": "webdriverio@latest",
+      "resolved": "https://registry.npmjs.org/webdriverio/-/webdriverio-4.4.0.tgz",
       "dependencies": {
         "supports-color": {
           "version": "3.1.2",
