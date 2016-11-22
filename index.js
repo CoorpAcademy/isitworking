@@ -257,7 +257,7 @@ function runner(options, done) {
         debug('Capabilities >>>>>', item);
         const desiredCapability = _.clone(options);
         // flat to one capability for webdriver.io
-        if (options.host && options.host.indexOf('browserstack')) {
+        if (options.host && options.host.indexOf('browserstack') >= 0) {
             item = sauce2browserstack(item);
         }
         desiredCapability.index = item.index;
