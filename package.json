@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/CoorpAcademy/isitworking#readme",
   "devDependencies": {
-    "@coorpacademy/eslint-plugin-coorpacademy": "^1.1.2",
+    "@coorpacademy/eslint-plugin-coorpacademy": "^3.0.2",
     "eslint-plugin-mocha-only": "^0.0.3",
-    "grunt-webdriver-manager": "0.0.9"
+    "grunt-webdriver-manager": "1.0.0"
   },
   "dependencies": {
     "async": "^2.0.1",
