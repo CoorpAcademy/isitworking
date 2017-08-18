@@ -34,8 +34,8 @@
     "debug": "3.0.0",
     "glob": "7.1.2",
     "lodash": "4.14.2",
-    "request": "2.74.0",
     "mocha": "^3.5.0",
+    "request": "2.81.0",
     "webdriverio": "4.4.0"
   },
   "optionalDependencies": {
