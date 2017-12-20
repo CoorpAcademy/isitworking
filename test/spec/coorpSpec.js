@@ -7,7 +7,8 @@ describe('[Access]', function() {
         return browser.url('https://www.coorpacademy.com/en')
         .getTitle()
         .then(function(title) {
-            assert.equal(title, 'Coorpacademy - Online Courses & Corporate training');
+            expect(title).to.be.equal('Coorpacademy - Online Courses & Corporate training');
+            expect(title.length > 0).to.be.true;
         });
     });
 });
