@@ -131,7 +131,7 @@ function launchFork(options, progress, next) {
             //     if (!line || line.length === 0) {
             //         return;
             //     }
-            //     stdout.push(chalk.stripColor(line));
+            //     stdout.push(chalk.reset(line));
             // });
         });
 
@@ -142,7 +142,7 @@ function launchFork(options, progress, next) {
             //     if (!line || line.length === 0) {
             //         return;
             //     }
-            //     stderr.push(chalk.stripColor(line));
+            //     stderr.push(chalk.reset(line));
             // });
         });
 
@@ -151,13 +151,13 @@ function launchFork(options, progress, next) {
             // stdout.forEach(function(line) {
             if (stdout) {
                 options.logger.info(testNameFormated + ' RESULT');
-                options.logger.info(chalk.stripColor(stdout));
+                options.logger.info(chalk.reset(stdout));
             }
             // });
             // stderr.forEach(function(line) {
             if (stderr) {
                 options.logger.info(chalk.bgWhite(testNameFormated + ' ERROR'));
-                options.logger.info(chalk.stripColor(stderr));
+                options.logger.info(chalk.reset(stderr));
             }
             // });
             switch (code) {
