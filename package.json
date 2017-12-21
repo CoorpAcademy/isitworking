@@ -4,7 +4,9 @@
   "description": "Webdriver.io runner with saucelabs support",
   "main": "index.js",
   "scripts": {
-    "test": "./test/start.sh"
+    "test": "npm run lint && ./test/start.sh",
+    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint lib/ test/ index *.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   "homepage": "https://github.com/CoorpAcademy/isitworking#readme",
   "devDependencies": {
     "@coorpacademy/eslint-plugin-coorpacademy": "^7.0.2",
+    "eslint": "^4.13.1",
     "eslint-plugin-mocha-only": "^0.0.3",
     "grunt-webdriver-manager": "1.0.0"
   },

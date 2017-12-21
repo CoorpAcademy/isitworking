@@ -1,12 +1,12 @@
-'use strict';
-const _ = require('lodash');
+
 const fork = require('child_process').fork;
 const path = require('path');
 const async = require('async');
+const _ = require('lodash');
 const chalk = require('chalk');
 const debug = require('debug')('webdriver.io:runner');
-const Progress = require('./lib/progress');
 const glob = require('glob');
+const Progress = require('./lib/progress');
 
 function upperCaseFirst(string) {
     if (!string) {
@@ -194,17 +194,18 @@ function launchFork(options, progress, next) {
     return webdriverioProcess;
     }
 
-function globalize(patterns) {
-    if (patterns instanceof Array === false) {
-        patterns = [patterns];
+function globalize(_patterns) {
+    let patterns = _patterns;
+    if (Array.isArray(_patterns) === false) {
+        patterns = [_patterns];
     }
     return _.flatten(_.map(patterns, function(pattern) {
         return glob.sync(pattern);
     }));
 }
 
-function runner(options, done) {
-    options = _.extend({
+function runner(_options, done) {
+    const options = _.extend({
         reporter: 'spec',
         ui: 'bdd',
         slow: 75,
@@ -215,13 +216,16 @@ function runner(options, done) {
         output: null,
         quiet: false,
         nospawn: false,
-        timeoutsImplicitWait: 0,
+        timeoutsAsyncScript: 1000,
+        timeoutsPageLoad: 7000,
+        timeoutsImplicitWait: 5000,
         maxSessions: Infinity,
         logger: console,
         tests: './test/**/*Spec.js',
         commandHelpers: './test/**/*Helper.js',
-        desiredCapabilities: []
-    }, options);
+        desiredCapabilities: [],
+        deprecationWarnings: false
+    }, _options);
     const logger = options.logger;
     logger.debug = logger.debug || logger.log || logger.info;
     debug(options);
@@ -253,7 +257,8 @@ function runner(options, done) {
 
     debug('starting async running', desiredCapabilities.length, `max ${options.maxSessions}`);
 
-    async.eachLimit(desiredCapabilities, options.maxSessions, function(item, next) {
+    async.eachLimit(desiredCapabilities, options.maxSessions, function(_item, next) {
+        let item = _item;
         debug('Capabilities >>>>>', item);
         const desiredCapability = _.clone(options);
         // flat to one capability for webdriver.io
@@ -267,10 +272,11 @@ function runner(options, done) {
         desiredCapability.desiredCapabilities = item;
         desiredCapability.tests = testFiles;
         desiredCapability.commandHelpers = commandHelpersFiles;
-        const fork = launchFork(desiredCapability, progress, next);
-        forksCache.push(fork);
-        debug('spawing fork with pid : ', fork.pid);
-    }, function(err) {
+        const forked = launchFork(desiredCapability, progress, next);
+        forksCache.push(forked);
+        debug('spawing fork with pid : ', forked.pid);
+    }, function(_err) {
+        let err = _err;
         progress.destroy();
         if (err) {
             logger.error(err);
@@ -279,9 +285,9 @@ function runner(options, done) {
                 err = null;
             }
         }
-        forksCache.forEach(function(fork) {
-            debug('sending SIGINT signal to ', fork.pid);
-            fork.kill('SIGINT');
+        forksCache.forEach(function(forked) {
+            debug('sending SIGINT signal to ', forked.pid);
+            forked.kill('SIGINT');
         });
         debug('wait a little while cleaning forks');
         setTimeout(function() {

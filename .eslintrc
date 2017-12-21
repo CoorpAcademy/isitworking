@@ -16,6 +16,7 @@
   },
   "globals": {
     "angular": true,
-    "browser": true
+    "browser": true,
+    "expect": true
   }
 }
