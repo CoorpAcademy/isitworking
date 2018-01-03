@@ -156,7 +156,7 @@ function launchFork(options, progress, next) {
             // });
             // stderr.forEach(function(line) {
             if (stderr) {
-                options.logger.info(chalk.bgWhite(testNameFormated + ' ERROR'));
+                options.logger.info(chalk.bgRed(testNameFormated + ' ERROR'));
                 options.logger.info(chalk.reset(stderr));
             }
             // });
@@ -216,9 +216,9 @@ function runner(_options, done) {
         output: null,
         quiet: false,
         nospawn: false,
-        timeoutsAsyncScript: 1000,
-        timeoutsPageLoad: 7000,
-        timeoutsImplicitWait: 5000,
+        timeoutsAsyncScript: 30000,
+        timeoutsPageLoad: 300000,
+        timeoutsImplicitWait: 0,
         maxSessions: Infinity,
         logger: console,
         tests: './test/**/*Spec.js',
