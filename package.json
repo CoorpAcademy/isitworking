@@ -36,7 +36,7 @@
     "chalk": "2.3.0",
     "debug": "3.1.0",
     "glob": "7.1.2",
-    "lodash": "4.17.4",
+    "lodash": "4.17.5",
     "mocha": "4.1.0",
     "request": "2.83.0",
     "webdriverio": "^4.9.11"
