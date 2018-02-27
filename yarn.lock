@@ -2418,10 +2418,6 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-validator@~9.1.1:
-  version "9.1.2"
-  resolved "https://registry.npmjs.org/validator/-/validator-9.1.2.tgz#5711b6413f78bd9d56003130c81b47c39e86546c"
-
 verror@1.10.0:
   version "1.10.0"
   resolved "https://registry.npmjs.org/verror/-/verror-1.10.0.tgz#3a105ca17053af55d6e270c1f8288682e18da400"
@@ -2434,9 +2430,9 @@ wdio-dot-reporter@~0.0.8:
   version "0.0.9"
   resolved "https://registry.npmjs.org/wdio-dot-reporter/-/wdio-dot-reporter-0.0.9.tgz#929b2adafd49d6b0534fda068e87319b47e38fe5"
 
-webdriverio@4.9.11:
-  version "4.9.11"
-  resolved "https://registry.npmjs.org/webdriverio/-/webdriverio-4.9.11.tgz#a828713c5a44be99afbe07eb5b523d5eccd04b44"
+webdriverio@4.11.0:
+  version "4.11.0"
+  resolved "https://registry.npmjs.org/webdriverio/-/webdriverio-4.11.0.tgz#289baae2257301d95cfecefdec2038a6aa6b94c5"
   dependencies:
     archiver "~2.1.0"
     babel-runtime "^6.26.0"
@@ -2457,7 +2453,6 @@ webdriverio@4.9.11:
     safe-buffer "~5.1.1"
     supports-color "~5.0.0"
     url "~0.11.0"
-    validator "~9.1.1"
     wdio-dot-reporter "~0.0.8"
     wgxpath "~1.0.0"
 
