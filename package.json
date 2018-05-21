@@ -30,7 +30,7 @@
     "grunt-webdriver-manager": "1.0.0"
   },
   "dependencies": {
-    "async": "2.6.0",
+    "async": "2.6.1",
     "bluebird": "3.5.1",
     "chai": "4.1.2",
     "chalk": "2.3.0",
